@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX3</title>
+</head>
+
+<body>
+    <script>
+        // Defina o array stepsPerWeekDay
+        let stepsPerWeekDay = [0, 0, 0, 0, 0, 0, 0];
+        
+        let diaSemana = 0
+
+        // Ciclo para receber entrada do utilizador até que um dia inválido seja inserido
+        do {
+            // Solicita o dia da semana
+            let diaSemana = +prompt("Digite o dia da semana (0 - segunda-feira a 6 - domingo):");
+
+            // Verifica se o valor inserido é um número válido
+            if (diaSemana < 0 || diaSemana > 6) {
+                alert("Dia inválido!");
+                break;
+            }
+
+            // Solicita o número de passos dados
+            let numeroPassos = +prompt("Digite o número de passos dados:");
+
+            // Adiciona os passos à posição correspondente no array
+            stepsPerWeekDay[diaSemana] = stepsPerWeekDay[diaSemana] + numeroPassos;
+
+
+        } while (diaSemana >= 0 && diaSemana <= 6)
+
+
+
+        // Exibe o resultado na consola
+        console.log("Passos por dia da semana: " + stepsPerWeekDay);
+
+    </script>
+</body>
+
+</html>

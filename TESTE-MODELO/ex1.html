@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX1</title>
+</head>
+
+<body>
+    <script>
+        let totalGasto = 0;
+
+        while (totalGasto <= 100) {
+            let precoRoupa = +prompt("Digite o preço da roupa:");
+            if (totalGasto + precoRoupa <= 100) {
+                totalGasto = totalGasto + precoRoupa;
+            } else {
+                break
+            }
+        }
+
+        let troco = totalGasto - 100;
+        alert("As roupas custaram " + totalGasto + "€ e sobraram " + troco + "€");
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX4</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Manipulação DOM</h1>
+
+    <input type="text" id="textInput" placeholder="Digite o texto ou URL da imagem">
+    
+    <button>Adicionar Elemento</button>
+    <p>Tentativas restantes: <span id="tentativasRestantes">10</span></p>
+  
+
+    <script>
+        // Variáveis
+        let tentativasRestantes = 10;
+
+        const btn = document.querySelector("button")
+        btn.addEventListener("click", adicionarElemento)
+
+
+        // Função para adicionar elemento (parágrafo ou imagem)
+        function adicionarElemento() {
+            // Obtém o valor da caixa de texto
+            let inputText = document.querySelector("input").value;
+
+            // Verifica se ainda há tentativas restantes
+            if (tentativasRestantes > 0) {
+                // Cria um novo elemento (parágrafo ou imagem)
+                let novoElemento;
+
+                // Cria um parágrafo (alínea B)
+                /* novoElemento = document.createElement("p");
+                novoTexto = document.createTextNode(inputText)
+                novoElemento.appendChild(novoTexto) */
+
+                // Cria uma imagem (alínea D)
+                novoElemento = document.createElement("img");
+                novoElemento.src = inputText;
+
+                // Adiciona o novo elemento ao corpo do documento
+                document.body.appendChild(novoElemento);
+
+                // Reduz o número de tentativas restantes
+                tentativasRestantes--;
+
+                // Atualiza o contador de tentativas restantes na página
+                document.querySelector("#tentativasRestantes").innerHTML = tentativasRestantes;
+            } else {
+                // Se não houver mais tentativas, desativa o botão
+                alert("Você atingiu o limite de 10 elementos!");
+                document.querySelector("button").disabled = true;
+            }
+
+            // Limpa o conteúdo da caixa de texto
+            document.querySelector("input").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

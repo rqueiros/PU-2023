@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX2</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1
+        let numbers = [4, 7, 3, 12, 23, 10, 33]
+
+
+        //console.log(numbers);
+
+        // Exercício 2
+        //forma tradicional
+        /* let numbers2=[]
+        for (let i = numbers.length-1; i >= 0; i--) {
+            numbers2.push(numbers[i])            
+        } */
+
+        // forma moderna
+        //let numbers2 = [...numbers].reverse()
+        //console.log(numbers);
+        //console.log(numbers2);
+
+        // Exercício 3
+        let evenNumbers = []
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                evenNumbers.push(numbers[i])
+            }
+        }
+        //console.log(evenNumbers);
+
+        // forma moderna
+        //console.log(numbers.filter(number => number % 2 == 0));
+
+        // Exercício 4
+        let numbers2 = [6, 9, 15]
+        let allNumbers = numbers.concat(numbers2)
+        //let allNumbers = [...numbers, ...numbers2]
+        //console.log(allNumbers);
+
+
+        // Exercício 5
+        //forma tradicional
+        let max = 0
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i]
+            }
+        }
+        console.log(max);
+
+        //forma moderna
+        console.log(Math.max(...numbers))
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
