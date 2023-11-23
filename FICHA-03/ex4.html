@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Definir Valores nas Caixas de Texto</title>
+  </head>
+  <body>
+    <input type="text" id="caixa1" />
+    <input type="text" id="caixa2" />
+    <input type="text" id="caixa3" />
+    <button id="botao">Definir Valores</button>
+
+    <script>
+      // a.
+      let botao = document.querySelector("#botao");
+
+      // b.
+      botao.addEventListener("click", myFunc);
+
+      function myFunc() {
+        document.querySelector("#caixa1").value = "um";
+        document.querySelector("#caixa2").value = "dois";
+        document.querySelector("#caixa3").value = "três";
+      }
+    </script>
+  </body>
 </html>

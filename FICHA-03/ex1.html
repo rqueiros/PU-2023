@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleção de Parágrafos</title>
 </head>
 <body>
-    <p></p>
-    <p></p>
-    <p></p>
-    
+
+  <p>Este é o primeiro parágrafo.</p>
+  <p>Este é o segundo parágrafo.</p>
+  <p id="destaque">Este é o terceiro parágrafo com id "destaque".</p>
+
+  <script>
+    // a.
+    let paragrafo1 = document.querySelector('p');
+
+    // b.
+    let paragrafoDestaque = document.querySelector('#destaque');
+
+    // c.
+    console.log('Conteúdo do primeiro parágrafo:', paragrafo1.innerHTML);
+    console.log('Conteúdo do parágrafo com id "destaque":', paragrafoDestaque.innerHTML);
+  </script>
+
 </body>
 </html>

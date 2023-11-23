@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Parágrafo</title>
+  </head>
+  <body>
+    <label for="texto">Insira o texto:</label>
+    <input type="text" id="texto" />
+    <button id="botao">Criar Parágrafo</button>
+
+    <script>
+      // Obtém a referência para a caixa de texto e o botão
+      let caixaTexto = document.querySelector("#texto");
+      let botao = document.querySelector("#botao");
+
+      // Adiciona um ouvinte de evento ao botão
+      botao.addEventListener("click", myFunc);
+
+      function myFunc() {
+        // Obtém o valor da caixa de texto
+        let textoDigitado = caixaTexto.value;
+
+        // Verifica se o texto está vazio
+        if (textoDigitado == "") {
+          // Se estiver vazio, exibe um alerta
+          alert("Não podem ser criados parágrafos vazios");
+        } else {
+          // Se não estiver vazio, cria um parágrafo com o conteúdo da caixa de texto
+          let novoParagrafo = document.createElement("p");
+          novoParagrafo.innerHTML = textoDigitado;
+
+          // Adiciona o parágrafo ao corpo do documento
+          document.body.appendChild(novoParagrafo);
+        }
+      }
+    </script>
+  </body>
 </html>
